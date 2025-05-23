@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gabriel Antonio Álvarez Oliva - Página Personal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            text-align: center;
+            background-color: #2f3640;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contenido {
+            display: flex;
+            flex-grow: 1;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        nav {
+            background-color: #1e272e;
+            width: 220px;
+            padding: 20px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        nav h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.6em;
+            user-select: none;
+        }
+        
+        nav button {
+            background: none;
+            border: none;
+            color: #d2dae2;
+            padding: 10px 15px;
+            margin: 5px 0;
+            font-size: 1rem;
+            text-align: left;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            user-select: none;
+        }
+        
+        nav button:hover,
+        nav button.active {
+            background-color: #485460;
+            color: #ffffff;
+        }
+        
+        main {
+            flex-grow: 1;
+            background: white;
+            padding: 25px 30px;
+            overflow-y: auto;
+        }
+        
+        h2 {
+            margin-top: 0;
+            color: #222f3e;
+        }
+        
+        a {
+            color: #487eb0;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        section {
+            display: none;
+        }
+        
+        section.active {
+            display: block;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            font-size: 1rem;
+        }
+        
+        th,
+        td {
+            border: 1px solid #c8d6e5;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #576574;
+            color: white;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-gap: 10px;
+            max-width: 800px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        
+        .video-container {
+            max-width: 800px;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 14px rgb(0 0 0 / 0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        #word {
+            font-size: 2em;
+            letter-spacing: 10px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        #letter {
+            width: 40px;
+            font-size: 1.2em;
+            padding: 5px;
+            text-transform: lowercase;
+            margin-right: 10px;
+        }
+        
+        #guessBtn {
+            padding: 6px 12px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border: none;
+            background: #0abde3;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        #guessBtn:hover {
+            background: #0984e3;
+        }
+        
+        #message {
+            margin-top: 15px;
+            font-weight: 700;
+            font-size: 1.2em;
+            min-height: 1.2em;
+        }
+        
+        ol {
+            max-width: 700px;
+        }
+        
+        ol li {
+            margin-bottom: 10px;
+        }
+        
+        main::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        main::-webkit-scrollbar-thumb {
+            background: #576574;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        Bienvenido a mi página personal - Gabriel Antonio Álvarez Oliva
+    </header>
+
+    <div class="contenido">
+        <nav>
+            <h2>Menú</h2>
+            <button class="active" data-target="hojaVida">Hoja de Vida</button>
+            <button data-target="notas">Notas</button>
+            <button data-target="galeria">Galería</button>
+            <button data-target="video">Video</button>
+            <button data-target="juego">Juego</button>
+            <button data-target="manual">Manual Técnico</button>
+        </nav>
+
+        <main>
+            <!-- Aquí permanecen tus secciones tal como están -->
+            <!-- ... las secciones Hoja de Vida, Notas, Galería, etc. -->
+
+            <section id="hojaVida" class="active">
+                <h2>Hoja de Vida</h2>
+                <p><strong>Nombre:</strong> Gabriel Antonio Álvarez Oliva</p>
+                <p><strong>Carrera:</strong> Estudiante de Ingeniería en Sistemas de Información y Ciencias de la Computación, Primer Semestre</p>
+                <p><strong>Universidad:</strong> Universidad Mariano Gálvez de Guatemala</p>
+                <p><strong>Experiencia Laboral:</strong> En busca de desafíos</p>
+                <p><strong>Educación:</strong> Graduado de Perito Contador con orientación en Computación</p>
+                <p><strong>Certificación:</strong> Certificación en Python</p>
+                <p><strong>Contacto:</strong> 38010979, 35074517</p>
+                <p><strong>Facebook:</strong> <a href="https://www.facebook.com/gabriel.oliva" target="_blank" rel="noopener noreferrer">Gabriel Oliva</a></p>
+            </section>
+
+            <section id="notas">
+                <h2>Notas de Primer y Segundo Parcial</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Curso</th>
+                            <th>Primer Parcial</th>
+                            <th>Segundo Parcial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Desarrollo humano y profesional</td>
+                            <td>15</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Introduccion a los sitemas de computo</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>Logica de sistemas</td>
+                            <td>10</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Metodologia de la investigacion</td>
+                            <td>10</td>
+                            <td>15</td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td>Contabilidad</td>
+                        <td>15</td>
+                        <td>15</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="galeria">
+                <h2>Galería</h2>
+                <div class="gallery" aria-label="Galería de imágenes">
+                    <img src="https://vivirtuweb.com/wp-content/uploads/2020/11/pagina-web-personal.png" alt="Imagen 1" />
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT17HYsNbcek6__jAg2DTAgtFplVdIxJqqVk3K-xpfkJo-fqe1ehlwnYwYZM-I6AZPXibs&usqp=CAU" alt="Imagen 2" />
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShCBBPhNqPlcJpsAloQr4U_EjeWnKJD_09vA&s" alt="Imagen 3" />
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR42WiRgi25UH3IFmCmpg1YwCaiE5ONEjcIVg&s" alt="Imagen 4" />
+                    <img src="https://wrmartineza.github.io/Administracion-de-base-de-datos/html5-imagenes/funciones%20de%20un%20DBA%20.jpg" alt="Imagen 5" />
+                    <img src="https://www.cio.com/wp-content/uploads/2024/10/3569686-0-44267100-1729236603-shutterstock_2441844605.jpg?quality=50&strip=all&w=1024" alt="Imagen 6" />
+                    <img src="https://www.comunicare.es/wp-content/uploads/2021/09/desarrollador-web-2.jpg" alt="Imagen 7" />
+                    <img src="https://www.freelancermap.com/blog/wp-content/uploads/2020/11/ingeniero-de-sistemas-resumen-profesional-funciones-formacion-habilidades-sueldo.png" alt="Imagen 8" />
+                    <img src="https://i.pinimg.com/736x/0b/2a/26/0b2a26c7e0eca9b12d9f3fdfc9e0164a.jpg" alt="Imagen 9" />
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY-p7TsCKQ1QAG5ezlKNesUjGzw-0AAlj8kQ&s" alt="Imagen 10" />
+                </div>
+            </section>
+
+            <section id="video">
+                <h2>Video</h2>
+                <div class="video-container" aria-label="Video de YouTube de música clásica">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_jEP347F6_g?si=jMWsWURIb-2IkWFG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </div>
+            </section>
+
+            <section id="juego">
+                <h2>Juego: Ahorcado</h2>
+                <p>Intenta adivinar la palabra:</p>
+                <div id="word" aria-live="polite" aria-atomic="true"></div>
+                <label for="letter" class="visually-hidden">Ingrese una letra para adivinar</label>
+                <input type="text" id="letter" maxlength="1" aria-describedby="message" />
+                <button id="guessBtn">Adivinar</button>
+                <p id="message" role="status"></p>
+            </section>
+
+            <section id="manual">
+                <h2>Manual Técnico</h2>
+                <p>Este sitio web fue creado siguiendo los siguientes pasos:</p>
+                <ol>
+                    <li>Definir la estructura del sitio web y los requisitos.</li>
+                    <li>Crear el archivo HTML único con secciones ocultas y mostradas dinámicamente.</li>
+                    <li>Agregar estilos modernos y diseño responsive con CSS.</li>
+                    <li>Implementar menú con botones para cambiar secciones en JavaScript.</li>
+                    <li>Agregar contenido para cada sección: hoja de vida, notas, galería, video, juego y manual.</li>
+                    <li>Crear juego de ahorcado simple en JavaScript que funciona en la página.</li>
+                    <li>Probar la funcionalidad y compatibilidad del sitio.</li>
+                </ol>
+            </section>
+        </main>
+
+    </div>
+
+    <script>
+        // Manejo de menú y visibilidad de secciones
+        const buttons = document.querySelectorAll('nav button');
+        const sections = document.querySelectorAll('main section');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+                button.classList.add('active');
+                const target = button.getAttribute('data-target');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+
+        // Juego del ahorcado (mi logica )
+        const words = ["programacion", "computadora", "universidad", "estudiante", "desarrollo"];
+        let selectedWord = words[Math.floor(Math.random() * words.length)];
+        let guessedLetters = [];
+
+        function updateDisplayWord() {
+            const wordEl = document.getElementById("word");
+            const display = selectedWord
+                .split('')
+                .map(l => guessedLetters.includes(l) ? l : '_')
+                .join(' ');
+            wordEl.textContent = display;
+
+            if (!display.includes('_')) {
+                document.getElementById("message").textContent = "¡Ganaste! 🎉";
+                document.getElementById("guessBtn").disabled = true;
+                document.getElementById("letter").disabled = true;
+            }
+        }
+
+        document.getElementById("guessBtn").addEventListener("click", () => {
+            const input = document.getElementById("letter");
+            const letter = input.value.toLowerCase();
+            input.value = '';
+
+            if (letter && !guessedLetters.includes(letter)) {
+                guessedLetters.push(letter);
+                updateDisplayWord();
+            }
+        });
+
+        updateDisplayWord();
+    </script>
+</body>
+
+</html>
